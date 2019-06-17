@@ -23,6 +23,6 @@ $vCenter = Connect-VIServer -Server $vCenterServer -Credential $Credential
 # ----------------------------------------
 
 $LicenseManager = get-view ($vCenter.ExtensionData.content.LicenseManager)
-$LicenseManager.AddLicense($vLicense,$null)
+$LicenseManager.AddLicense($License,$null)
 $LicenseAssignmentManager = get-view ($LicenseManager.licenseAssignmentManager)
 $LicenseAssignmentManager.UpdateAssignedLicense($vCenter.InstanceUuid,$License,$Null)
