@@ -1,8 +1,15 @@
-$vCenterServer = 
-$User = 
-$Password = 
-$License = 
+# ----------------------------------------
+# VARIABLES
+# ----------------------------------------
 
+$vCenterServer = "{vCenter FQDN}"
+$User = "{Username}"
+$Password = "{Password}"
+$License = "{License Key}"
+
+# ----------------------------------------
+# VCENTER CONNECTION
+# ----------------------------------------
 $EncryptedPassword = ConvertTo-SecureString -String "$Password" -AsPlainText -Force
 	
 $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $EncryptedPassword 
@@ -12,7 +19,7 @@ Write-Host "Connecting to $vCenterServer"
 $vCenter = Connect-VIServer -Server $vCenterServer -Credential $Credential
 
 # ----------------------------------------
-# 	  VCENTER LICENSE CONFIGURATION
+# VCENTER LICENSE CONFIGURATION
 # ----------------------------------------
 
 $LicenseManager = get-view ($vCenter.ExtensionData.content.LicenseManager)
