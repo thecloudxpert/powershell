@@ -1,0 +1,55 @@
+{
+    "__version": "1.1",
+    "__comments": "Sample template to deploy a Platform Services Controller to a vCenter Server.",
+    "target.vcsa": {
+        "appliance": {
+            "deployment.network": "<port group>",
+            "deployment.option": "infrastructure",
+            "name": "<display name>",
+            "thin.disk.mode": true
+        },
+        "network": {
+            "hostname": "<Host name>",
+            "dns.servers": [
+                "<DNS Server IP Address>",
+                "<Alternate DNS Server IP Address>"
+            ],
+            "gateway": "<Gateway IP address>",
+            "ip": "<Static IP address>",
+            "ip.family": "ipv4",
+            "mode": "static",
+            "prefix": "<The value must be 0-32>"
+        },
+        "os": {
+            "password": "<vCenter Server Appliance root password>",
+            "time.tools-sync": false,
+            "ntp.servers": [
+                            "<ntp server>", 
+                            "<ntp server>"
+                          ],
+	    "ssh.enable": true
+        },
+        "sso": {
+            "password": "<vCenter Single Sign-On password>",
+            "domain-name": "<SSO domain name>",
+            "site-name": "<SSO site name>"
+        },
+        "vc": {
+            "hostname": "<vCenter Server host name or IP address>",
+            "username": "<SSO Administrator>",
+            "password": "<vCenter Server password>",
+            "datacenter": [
+                "folderA",
+                "folderB",
+                "Datacenter"
+            ],
+	     "datastore": "<Datastore connected to target>",
+	     "vm.folder": "VM folder",
+	     "target": [
+                "folder1",
+                "folder2",
+                "<Target identifier>"
+            ]
+        }
+    }
+}
