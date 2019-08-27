@@ -1,6 +1,6 @@
 #Cloud Automation Services
 
-$role = Read-Host -Prompt "Enter the name for the CAS Role"
+$role = Read-Host -Prompt "Enter the name for the CAS Role (i.e. vRealize Automation Cloud Service)"
 $vcenter = Read-Host -Prompt "Enter the FQDN of the vCenter Server"
 $sso_user = Read-Host -Prompt "Enter the SSO Admin User"
 $sso_password = Read-Host -assecurestring -Prompt "Enter the SSO Admin Password"
